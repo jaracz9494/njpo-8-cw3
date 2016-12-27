@@ -336,6 +336,60 @@ public class Testy {
 
     }
     
+    @Test
+    public void Test_stworz_dlugosc() {
+        
+        Cw3 p = new Cw3();
+        List ArrayList = new ArrayList();
+        p.stworz(ArrayList);       
+        
+        assertEquals("ArrayList powinna zawierac 100 elementow", 100, ArrayList.size());
+
+    }
+    
+    @Test
+    public void Test_stworz_porownanie() {
+        
+        Cw3 p = new Cw3();
+        List ArrayList = new ArrayList();
+        List LinkedList = new LinkedList();
+
+        p.stworz(ArrayList);
+        p.stworz(LinkedList);     
+        
+        int actual = ArrayList.size()- LinkedList.size();
+        
+        assertEquals("dlugosci Arraylisty i LinkedListy powinny byc takie same", 0, actual);
+
+    }
+    
+    @Test
+    public void Test_stworz_elementy_pierwszy() {
+        
+        Cw3 p = new Cw3();
+        List ArrayList = new ArrayList();
+
+        p.stworz(ArrayList);     
+        
+        int x = (Integer)ArrayList.get(0);        
+        
+        assertSame("ArrayLista powinna zawierac pierwszy element rowny 0", 0, x);
+
+    }
+    
+    @Test
+    public void Test_stworz_elementy_ostatni() {
+        
+        Cw3 p = new Cw3();
+        List ArrayList = new ArrayList();
+
+        p.stworz(ArrayList);     
+        
+        int x = (Integer)ArrayList.get(99);        
+        
+        assertSame("ArrayLista powinna zawierac ostatni element rowny 99", 99, x);
+    }
+    
     @BeforeClass
     public static void setUpClass() {
     }
